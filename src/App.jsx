@@ -38,7 +38,7 @@ export default function App() {
           {!isMobileMenuOpen && <Route path="/cleaning-supplies" element={<CleaningSupplies />} />}
           {!isMobileMenuOpen && <Route path="/personal-care" element={<PersonalCare />} />}
           {!isMobileMenuOpen && <Route path="/baby-care" element={<BabyCare />} />}
-          <Route path="/checkout" element={<CheckoutPage />} />
+          {!isMobileMenuOpen && <Route path="/checkout" element={<CheckoutPage />} />}
         </Routes>
       </ShopContextProvider>
     </div>

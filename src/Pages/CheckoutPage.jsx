@@ -9,9 +9,9 @@ export const CheckoutPage = () => {
   return (
     <div className="checkoutPage">
       <div>
-        <h1>Your Cart Items</h1>
+        <h1 className="text-3xl text-center p-8">Your Cart Items</h1>
       </div>
-      <div className="cart-items">
+      <div className="cart-items border-b border-t border-teal-300">
         {data.map((item) => {
           if (cartItems[item.id] !== 0) {
             return <CartItem data={item} />;
