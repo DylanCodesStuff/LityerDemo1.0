@@ -20,7 +20,7 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen, toggleMo
         </CSSTransition>
       )}
       {!isMobileMenuOpen && (
-        <div className="header-container p-5 sticky w-full  ">
+        <div className="header-container p-5 sticky w-full bg-white top-0 shadow">
           <div className="top-bar flex justify-between">
             <div className="left-side flex items-center">
               <div onClick={handleHamburgerClick}>
@@ -33,7 +33,11 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen, toggleMo
               </Link>
             </div>
             <Link to="/checkout">
-              <div className="header-shopping-bag w-12">
+              <div className="left-side-nav flex items-center justify-between gap-2">
+                <div className="usdc-container flex items-center gap-1">
+                  <img className="usdc-logo w-8" src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png" />
+                  <p>4.99</p>
+                </div>
                 <img className="shopping-bag-img w-12" src="/shoppingbag.png" />
               </div>
             </Link>

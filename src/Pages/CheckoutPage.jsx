@@ -4,7 +4,7 @@ import { ShopContext } from "../context/shop-context";
 import CartItem from "../Components/CartItem";
 
 export const CheckoutPage = () => {
-  const { cartItems } = useContext(ShopContext);
+  const { cartItems, setCartItems, getDefaultCart, getTotalPrice } = useContext(ShopContext);
 
   return (
     <div className="checkoutPage">
@@ -17,6 +17,23 @@ export const CheckoutPage = () => {
             return <CartItem data={item} />;
           }
         })}
+      </div>
+      <div className="disclaimers-and-info flex flex-col">
+        <div className="empty-cart flex justify-end p-4 ">
+          <button className="text-base underline underline-offset-4" onClick={() => setCartItems(getDefaultCart)}>
+            Empty Cart
+          </button>
+        </div>
+        <p className="text-sm text-gray-500 underline underline-offset-4 p-4">Prices are estimated, and may not include tax.</p>
+        <p className="text-sm text-gray-500 underline underline-offset-4 mb-48 p-4">Customer Agreement Terms</p>
+      </div>
+      <div className="checkout-footer sticky bottom-0 flex flex-col justify-center items-center gap-4 bg-white p-10">
+        <div className="checkout-footer-top-row text-3xl">
+          <p>Subtotal: &nbsp;${getTotalPrice().toFixed(2)}</p>
+        </div>
+        <div className="checkout-footer-bottom-row text-4xl">
+          <button className="checkout-button">Select Delivery Time</button>
+        </div>
       </div>
     </div>
   );

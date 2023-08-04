@@ -3,7 +3,7 @@ import { ShopContext } from "../context/shop-context";
 
 const CartItem = (props) => {
   const { img, title, description, price, id } = props.data;
-  const { cartItems } = useContext(ShopContext);
+  const { cartItems, addToCart, removeFromCart } = useContext(ShopContext);
   return (
     <div className="cart-item" key={id}>
       <div className="cart-top-container gap-4">
@@ -14,8 +14,16 @@ const CartItem = (props) => {
         </div>
       </div>
       <div className="cart-bottom-container">
-        <p className="cart-item-price">${price}</p>
-        <p className="cart-item-quantity">Quantity: {cartItems[id]}</p>
+        <p className="cart-item-price">${(price * cartItems[id]).toFixed(2)}</p>
+        <div className="cart-counter flex gap-2">
+          <button onClick={() => removeFromCart(id)}>
+            <img className="w-6" src="https://icons.veryicon.com/png/o/commerce-shopping/online-retailers/minus-25.png" />
+          </button>
+          <p className="cart-item-quantity text-xl">{cartItems[id]}</p>
+          <button onClick={() => addToCart(id)}>
+            <img className="w-6" src="https://icons.veryicon.com/png/o/commerce-shopping/online-retailers/plus-45.png" />
+          </button>
+        </div>
       </div>
     </div>
   );
