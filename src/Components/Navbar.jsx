@@ -32,15 +32,16 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen, toggleMo
                 </div>
               </Link>
             </div>
-            <Link to="/checkout">
-              <div className="left-side-nav flex items-center justify-between gap-2">
-                <div className="usdc-container flex items-center gap-1">
-                  <img className="usdc-logo w-8" src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png" />
-                  <p>4.99</p>
-                </div>
-                <img className="shopping-bag-img w-12" src="/shoppingbag.png" />
+
+            <div className="left-side-nav flex items-center justify-between gap-2">
+              <div className="usdc-container flex items-center gap-1">
+                <img className="usdc-logo w-8" src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png" />
+                <p>4.99</p>
               </div>
-            </Link>
+              <Link to="/checkout">
+                <img className="shopping-bag-img w-12" src="/shoppingbag.png" />
+              </Link>
+            </div>
           </div>
           {/* <div className="header-coupon">
           <h3 className="">Today's Coupon:</h3>
